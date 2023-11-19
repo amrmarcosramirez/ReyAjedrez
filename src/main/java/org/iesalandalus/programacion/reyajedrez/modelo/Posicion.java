@@ -52,4 +52,10 @@ public class Posicion {
     public int hashCode() {
         return Objects.hash(fila, columna);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Posicion[x=%s, y=%s]", this.fila, this.columna);
+    }
+
 }
