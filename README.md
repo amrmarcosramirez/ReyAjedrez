@@ -1,6 +1,6 @@
 # Tarea Rey Ajedrez
 ## Profesor: Juan Antonio Muñoz Almansa
-## Alumno:
+## Alumno: Andys Marcos Ramírez Aberasturis
 
 La tarea va a consistir en modelar el movimiento de un rey de ajedrez por el tablero de dicho juego.
 
