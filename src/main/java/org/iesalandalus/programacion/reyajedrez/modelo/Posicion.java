@@ -1,11 +1,19 @@
 package org.iesalandalus.programacion.reyajedrez.modelo;
 
+import java.util.Objects;
+
 public class Posicion {
     private int fila;
     private char columna;
 
     public int getFila() {
         return fila;
+    }
+
+    public Posicion(Posicion posicion) {
+        Objects.requireNonNull(posicion, "No puedo copiar una posición nula.");
+        fila = posicion.fila;
+        columna = posicion.columna;
     }
 
     public Posicion(int fila, char columna) {
