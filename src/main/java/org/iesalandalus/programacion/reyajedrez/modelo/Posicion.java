@@ -8,6 +8,11 @@ public class Posicion {
         return fila;
     }
 
+    public Posicion(int fila, char columna) {
+        setFila(fila);
+        setColumna(columna);
+    }
+
     public void setFila(int fila) {
         if (fila < 1) {
             throw new IllegalArgumentException("El valor de la fila es menor que el mínimo permitido.");
