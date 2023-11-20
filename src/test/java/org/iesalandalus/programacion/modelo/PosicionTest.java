@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.iesaladanlus.programacion.reyajedrez.modelo.Posicion;
+import org.iesalandalus.programacion.reyajedrez.modelo.Posicion;
 import org.junit.jupiter.api.Test;
 
 class PosicionTest {
