@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import javax.naming.OperationNotSupportedException;
 
-import org.iesaladanlus.programacion.reyajedrez.modelo.Color;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Direccion;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Posicion;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Rey;
+import org.iesalandalus.programacion.reyajedrez.modelo.Color;
+import org.iesalandalus.programacion.reyajedrez.modelo.Direccion;
+import org.iesalandalus.programacion.reyajedrez.modelo.Posicion;
+import org.iesalandalus.programacion.reyajedrez.modelo.Rey;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
