@@ -7,6 +7,10 @@ public class Rey {
     private Color color;
     private Posicion posicion;
 
+    public Rey(){
+        posicion = new Posicion(1, 'e');
+    }
+
     public Color getColor() {
         return color;
     }
