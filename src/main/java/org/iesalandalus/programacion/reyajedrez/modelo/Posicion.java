@@ -26,8 +26,9 @@ public class Posicion {
             throw new IllegalArgumentException("El valor de la fila es menor que el mínimo permitido.");
         } else if (fila > 8) {
             throw new IllegalArgumentException("El valor de la fila es mayor que el máximo permitido.");
+        } else {
+            this.fila = fila;
         }
-        this.fila = fila;
     }
 
     public char getColumna() {
