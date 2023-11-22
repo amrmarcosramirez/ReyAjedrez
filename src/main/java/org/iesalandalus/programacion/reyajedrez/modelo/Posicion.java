@@ -20,7 +20,7 @@ public class Posicion {
     public int getFila() {
         return fila;
     }
-    
+
     private void setFila(int fila) {
         if (fila < 1) {
             throw new IllegalArgumentException("El valor de la fila es menor que el mínimo permitido.");
