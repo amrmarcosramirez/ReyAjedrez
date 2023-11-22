@@ -77,4 +77,9 @@ public class Rey {
 
         totalMovimientos++;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Rey[color=%s, posición=%s]", this.color, this.posicion);
+    }
 }
