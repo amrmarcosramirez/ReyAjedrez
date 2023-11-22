@@ -6,10 +6,6 @@ public class Posicion {
     private int fila;
     private char columna;
 
-    public int getFila() {
-        return fila;
-    }
-
     public Posicion(Posicion posicion) {
         Objects.requireNonNull(posicion, "No puedo copiar una posición nula.");
         fila = posicion.fila;
@@ -21,7 +17,11 @@ public class Posicion {
         setColumna(columna);
     }
 
-    public void setFila(int fila) {
+    public int getFila() {
+        return fila;
+    }
+    
+    private void setFila(int fila) {
         if (fila < 1) {
             throw new IllegalArgumentException("El valor de la fila es menor que el mínimo permitido.");
         } else if (fila > 8) {
@@ -35,7 +35,7 @@ public class Posicion {
         return columna;
     }
 
-    public void setColumna(char columna) {
+    private void setColumna(char columna) {
         this.columna = switch (columna) {
             case 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' -> columna;
             default -> throw new IllegalArgumentException("La columna no es correcta. Está fuera de rango permitido.");
