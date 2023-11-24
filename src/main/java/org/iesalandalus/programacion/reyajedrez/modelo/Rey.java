@@ -11,6 +11,7 @@ public class Rey {
     public Rey(){
         color = Color.BLANCO;
         posicion = new Posicion(1, 'e');
+        setPosicion(posicion);
     }
 
     public Rey(Color color){
@@ -22,6 +23,7 @@ public class Rey {
         } else {
             posicion = new Posicion(8, 'e');
         }
+        setPosicion(posicion);
     }
 
     public Color getColor() {
@@ -42,6 +44,14 @@ public class Rey {
     private void setPosicion(Posicion posicion) {
         this.posicion = Objects.requireNonNull(posicion, "La posición del Rey no puede ser nula.");
 
+    }
+
+    public static int getTotalMovimientos() {
+        return totalMovimientos;
+    }
+
+    public static void setTotalMovimientos(int totalMovimientos) {
+        Rey.totalMovimientos = totalMovimientos;
     }
 
     public void mover(Direccion direccion) throws OperationNotSupportedException {
