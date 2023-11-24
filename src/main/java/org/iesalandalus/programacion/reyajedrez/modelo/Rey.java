@@ -59,21 +59,22 @@ public class Rey {
             throw new NullPointerException("La dirección no puede ser nula.");
         }
 
-        comprobarEnroque(direccion);
+
         int nuevaFila = posicion.getFila();
         char nuevaColumna = posicion.getColumna();
         try {
+            comprobarEnroque(direccion);
             posicion = new Posicion(nuevaFila, nuevaColumna);
         } catch (IllegalArgumentException e) {
             throw new OperationNotSupportedException("Movimiento no válido: " + e.getMessage());
         }
-
-        totalMovimientos++;
+        setPosicion(posicion);
+        setTotalMovimientos(totalMovimientos++);
     }
 
     private void comprobarEnroque(Direccion direccion){
          if ((direccion == Direccion.ENROQUE_CORTO ||
-                 direccion == Direccion.ENROQUE_LARGO) && totalMovimientos > 0){
+                 direccion == Direccion.ENROQUE_LARGO) && getTotalMovimientos() > 0){
             throw new IllegalArgumentException("Movimiento no válido.");
          }
     }
