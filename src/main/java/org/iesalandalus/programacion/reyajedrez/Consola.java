@@ -1,8 +1,8 @@
 package org.iesalandalus.programacion.reyajedrez;
 
 import org.iesalandalus.programacion.reyajedrez.modelo.Color;
-import org.iesalandalus.programacion.reyajedrez.modelo.Posicion;
 import org.iesalandalus.programacion.utilidades.Entrada;
+
 
 public class Consola {
 
@@ -16,11 +16,23 @@ public class Consola {
     }
 
     public static int elegirOpcionMenu() {
-        int numopcion;
+        int numOpcion;
         do {
-            System.out.println(" Introduzca opción:");
-            numopcion = Entrada.entero();
-        } while (numopcion != 1 && numopcion != 2 && numopcion != 3 && numopcion != 4);
-        return numopcion;
+            System.out.println("Introduzca opción:");
+            numOpcion = Entrada.entero();
+        } while (numOpcion != 1 && numOpcion != 2 && numOpcion != 3 && numOpcion != 4);
+        return numOpcion;
+    }
+
+    public static int elegirOpcion() {
+        int numOpcion;
+
+        do {
+            System.out.println("De las siguientes opciones, elija un color ");
+            System.out.println("1. " + Color.BLANCO);
+            System.out.println("2. " + Color.NEGRO);
+            numOpcion = Entrada.entero();
+        } while (numOpcion != 1 && numOpcion != 2);
+        return numOpcion;
     }
 }
