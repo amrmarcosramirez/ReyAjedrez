@@ -13,6 +13,10 @@ public class MainApp {
 
     }
 
+    private static void crearReyDefecto() {
+        Rey rey = new Rey();
+    }
+    
     private static void ejecutarOpcion (int opcion) {
         if (opcion == 1){
             crearReyDefecto();
