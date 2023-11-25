@@ -1,8 +1,8 @@
 package org.iesalandalus.programacion.reyajedrez;
 
-import org.iesalandalus.programacion.reyajedrez.modelo.Color;
+import org.iesalandalus.programacion.reyajedrez.modelo.*;
 
-import org.iesalandalus.programacion.reyajedrez.modelo.Direccion;
+//import org.iesalandalus.programacion.reyajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 
@@ -11,8 +11,10 @@ public class Consola {
     private Consola(){}
 
     public static void mostrarMenu() {
-        System.out.println("1. Crear rey por defecto" + "\n" + "2. Crear rey eligiendo el color" +
-                "\n" + "3. Mover" + "\n" + "4. Salir");
+        System.out.println("1. Crear rey por defecto");
+        System.out.println("2. Crear rey eligiendo el color");
+        System.out.println("3. Mover");
+        System.out.println("4. Salir");
     }
 
     public static int elegirOpcionMenu() {
@@ -31,7 +33,8 @@ public class Consola {
         do
         {
             System.out.println("De las siguientes opciones, elija un color: ");
-            System.out.println("1. " + Color.BLANCO + "/n" + "2. " + Color.NEGRO);
+            System.out.println("1. " + Color.BLANCO );
+            System.out.println("2. " + Color.NEGRO);
             color=Entrada.entero();
         }while (color<1 || color>2);
 
@@ -44,14 +47,19 @@ public class Consola {
     }
 
     public static void mostrarMenuDirecciones() {
-            System.out.println("Estas son las direcciones que se pueden elegir: ");
-            System.out.println("1. " +  Direccion.NORTE + "\n" + "2. " +  Direccion.SUR + "\n" +
-                               "3. " +  Direccion.ESTE + "\n" + "4. " +  Direccion.OESTE + "\n" +
-                               "5. " +  Direccion.NORESTE + "\n" + "6. " +  Direccion.NOROESTE + "\n" +
-                               "7. " +  Direccion.SURESTE + "\n" + "8. " +  Direccion.SUROESTE + "\n" +
-                               "9. " +  Direccion.ENROQUE_CORTO + "\n" +
-                               "10. " + Direccion.ENROQUE_LARGO);
+        System.out.println("Estas son las direcciones que se pueden elegir: ");
+        System.out.println("1. " +  Direccion.NORTE);
+        System.out.println("2. " +  Direccion.SUR );
+        System.out.println("3. " +  Direccion.ESTE);
+        System.out.println("4. " +  Direccion.OESTE);
+        System.out.println("5. " +  Direccion.NORESTE);
+        System.out.println("6. " +  Direccion.NOROESTE);
+        System.out.println("7. " +  Direccion.SURESTE);
+        System.out.println("8. " +  Direccion.SUROESTE);
+        System.out.println("9. " +  Direccion.ENROQUE_CORTO);
+        System.out.println("10. " + Direccion.ENROQUE_LARGO);
     }
+
 
     public static Direccion elegirDireccion() {
         int direccion;
