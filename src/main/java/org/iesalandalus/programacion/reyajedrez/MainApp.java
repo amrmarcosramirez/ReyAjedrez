@@ -22,38 +22,33 @@ public class MainApp {
         do {
             mostrarMenu();
             numOpcion = elegirOpcionMenu();
-            switch (numOpcion) {
-                case 1 -> crearReyDefecto();
-                case 2 -> crearReyColor();
-                case 3 -> mover();
-                case 4 -> despedirse();
-            }
+            ejecutarOpcion(numOpcion);
         } while (numOpcion != 4);
 
     }
 
     private static void ejecutarOpcion (int opcion) {
-        if (opcion == 1){
-            crearReyDefecto();
-        } else if (opcion == 2) {
-            crearReyColor();
-        } else if (opcion == 3) {
-            mover();
-        } else {
-            mostrarRey();
+        switch (opcion) {
+            case 1 -> crearReyDefecto();
+            case 2 -> crearReyColor();
+            case 3 -> mover();
+            case 4 -> despedirse();
         }
     }
 
     private static void crearReyDefecto() {
         rey = new Rey();
+        mostrarRey();
     }
 
     private static void crearReyColor() {
         Color color = Consola.elegirColor();
         rey = new Rey(color);
+        mostrarRey();
     }
 
     private static void mover(){
+        mostrarRey();
         mostrarMenuDirecciones();
         Direccion direccion = elegirDireccion();
         try
