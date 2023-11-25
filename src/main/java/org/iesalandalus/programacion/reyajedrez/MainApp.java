@@ -14,7 +14,7 @@ import static org.iesalandalus.programacion.reyajedrez.Consola.*;
 
 public class MainApp {
 
-    private Rey rey;
+    private static Rey rey;
 
     public static void main(String[] args) {
 
@@ -45,18 +45,25 @@ public class MainApp {
     }
 
     private static void crearReyDefecto() {
-        Rey rey = new Rey();
+        rey = new Rey();
     }
 
     private static void crearReyColor() {
         Color color = Consola.elegirColor();
-        Rey rey = new Rey(color);
+        rey = new Rey(color);
     }
 
     private static void mover(){
         mostrarMenuDirecciones();
         Direccion direccion = elegirDireccion();
-        rey.mover(direccion);
+        try
+        {
+            rey.mover(direccion);
+        }
+        catch(OperationNotSupportedException | NullPointerException | IllegalArgumentException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void mostrarRey(){
