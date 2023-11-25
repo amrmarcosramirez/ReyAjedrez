@@ -25,7 +25,6 @@ public class Consola {
     }
 
     public static Color elegirColor() {
-
         int color;
         Color colorElegido=Color.BLANCO;
 
@@ -38,8 +37,8 @@ public class Consola {
 
         switch (color)
         {
-            case 0 -> colorElegido=Color.BLANCO;
-            case 1 -> colorElegido=Color.NEGRO;
+            case 1 -> colorElegido=Color.BLANCO;
+            case 2 -> colorElegido=Color.NEGRO;
         }
         return colorElegido;
     }
@@ -51,18 +50,33 @@ public class Consola {
                                "5. " +  Direccion.NORESTE + "\n" + "6. " +  Direccion.NOROESTE + "\n" +
                                "7. " +  Direccion.SURESTE + "\n" + "8. " +  Direccion.SUROESTE + "\n" +
                                "9. " +  Direccion.ENROQUE_CORTO + "\n" +
-                               "10. " +  Direccion.ENROQUE_LARGO);
+                               "10. " + Direccion.ENROQUE_LARGO);
     }
 
-    public static String elegirDireccion() {
-        String direccion;
+    public static Direccion elegirDireccion() {
+        int direccion;
+        Direccion direccionElegida=Direccion.NORTE;
 
-        do {
-            System.out.println("De las opciones anteriores, elija una dirección: ");
-            direccion = Entrada.cadena();
+        do
+        {
+            System.out.println("De las opciones mostradas, elija una: ");
+            direccion=Entrada.entero();
+        }while (direccion<1 || direccion>10);
 
-        } while (direccion != Direccion.values().toString());
-        return direccion;
+        switch (direccion)
+        {
+            case 1 -> direccionElegida=Direccion.NORTE ;
+            case 2 -> direccionElegida=Direccion.SUR;
+            case 3 -> direccionElegida=Direccion.ESTE;
+            case 4 -> direccionElegida=Direccion.OESTE;
+            case 5 -> direccionElegida=Direccion.NORESTE;
+            case 6 -> direccionElegida=Direccion.NOROESTE;
+            case 7 -> direccionElegida=Direccion.SURESTE;
+            case 8 -> direccionElegida=Direccion.SUROESTE;
+            case 9 -> direccionElegida=Direccion.ENROQUE_CORTO;
+            case 10 -> direccionElegida=Direccion.ENROQUE_LARGO;
+        }
+        return direccionElegida;
     }
 
     public static void despedirse() {
