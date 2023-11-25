@@ -56,7 +56,7 @@ public class Posicion {
 
     @Override
     public String toString() {
-        return String.format("Posicion[x=%s, y=%s]", this.fila, this.columna);
+        return String.format("Posición[fila=%s, columna=%s]", this.fila, this.columna);
     }
 
 }
