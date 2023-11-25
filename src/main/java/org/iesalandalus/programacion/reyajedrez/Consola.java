@@ -46,7 +46,12 @@ public class Consola {
 
     public static void mostrarMenuDirecciones() {
             System.out.println("Estas son las direcciones que se pueden elegir: ");
-            System.out.println(Direccion.values().toString());
+            System.out.println("1. " +  Direccion.NORTE + "\n" + "2. " +  Direccion.SUR + "\n" +
+                               "3. " +  Direccion.ESTE + "\n" + "4. " +  Direccion.OESTE + "\n" +
+                               "5. " +  Direccion.NORESTE + "\n" + "6. " +  Direccion.NOROESTE + "\n" +
+                               "7. " +  Direccion.SURESTE + "\n" + "8. " +  Direccion.SUROESTE + "\n" +
+                               "9. " +  Direccion.ENROQUE_CORTO + "\n" +
+                               "10. " +  Direccion.ENROQUE_LARGO);
     }
 
     public static String elegirDireccion() {
@@ -54,7 +59,6 @@ public class Consola {
 
         do {
             System.out.println("De las opciones anteriores, elija una dirección: ");
-            System.out.println(Direccion.values().toString());
             direccion = Entrada.cadena();
 
         } while (direccion != Direccion.values().toString());
