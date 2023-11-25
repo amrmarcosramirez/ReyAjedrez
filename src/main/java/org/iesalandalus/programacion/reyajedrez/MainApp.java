@@ -4,6 +4,7 @@ import org.iesalandalus.programacion.reyajedrez.modelo.Color;
 import org.iesalandalus.programacion.reyajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reyajedrez.modelo.Posicion;
 import org.iesalandalus.programacion.reyajedrez.modelo.Rey;
+import org.iesalandalus.programacion.utilidades.Entrada;
 
 import javax.naming.OperationNotSupportedException;
 
@@ -13,13 +14,23 @@ import static org.iesalandalus.programacion.reyajedrez.Consola.*;
 
 public class MainApp {
 
+    private Rey rey;
+
     public static void main(String[] args) {
 
+        int numOpcion;
+        do {
+            mostrarMenu();
+            numOpcion = elegirOpcionMenu();
+            switch (numOpcion) {
+                case 1 -> crearReyDefecto();
+                case 2 -> crearReyColor();
+                case 3 -> mover();
+                case 4 -> despedirse();
+            }
+        } while (numOpcion != 4);
 
     }
-
-
-    //private Rey rey;
 
     private static void ejecutarOpcion (int opcion) {
         if (opcion == 1){
@@ -45,11 +56,11 @@ public class MainApp {
     private static void mover(){
         mostrarMenuDirecciones();
         Direccion direccion = elegirDireccion();
-        Rey.(direccion);
+        rey.mover(direccion);
     }
 
     private static void mostrarRey(){
-        Rey rey = new Rey();
+        //Rey rey = new Rey();
         Objects.requireNonNull(rey, "El rey aún no se ha creado.");
         System.out.println(rey);
     }
