@@ -11,7 +11,6 @@ public class Rey {
     public Rey(){
         color = Color.BLANCO;
         posicion = new Posicion(1, 'e');
-        setPosicion(posicion);
     }
 
     public Rey(Color color){
@@ -23,7 +22,6 @@ public class Rey {
         } else {
             posicion = new Posicion(8, 'e');
         }
-        setPosicion(posicion);
     }
 
     public Color getColor() {
