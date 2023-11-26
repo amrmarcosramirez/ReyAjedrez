@@ -38,7 +38,7 @@ public class Posicion {
     private void setColumna(char columna) {
         this.columna = switch (columna) {
             case 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' -> columna;
-            default -> throw new IllegalArgumentException("La columna no es correcta. Está fuera de rango permitido.");
+            default -> throw new IllegalArgumentException("La columna no es correcta. Está fuera del rango permitido.");
         };
     }
 
