@@ -4,11 +4,12 @@ import javax.naming.OperationNotSupportedException;
 import java.util.Objects;
 
 public class Rey {
-    private static int totalMovimientos = 0;
+    private static int totalMovimientos;
     private Color color;
     private Posicion posicion;
 
     public Rey(){
+        totalMovimientos = 0;
         color = Color.BLANCO;
         posicion = new Posicion(1, 'e');
     }
