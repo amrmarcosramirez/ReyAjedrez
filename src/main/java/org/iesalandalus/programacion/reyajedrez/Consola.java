@@ -71,7 +71,7 @@ public class Consola {
 
         switch (direccion)
         {
-            case 1 -> direccionElegida=Direccion.NORTE ;
+            case 1 -> direccionElegida=Direccion.NORTE;
             case 2 -> direccionElegida=Direccion.SUR;
             case 3 -> direccionElegida=Direccion.ESTE;
             case 4 -> direccionElegida=Direccion.OESTE;
