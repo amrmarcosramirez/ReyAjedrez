@@ -57,17 +57,60 @@ public class Rey {
             throw new NullPointerException("La dirección no puede ser nula.");
         }
 
-
         int nuevaFila = posicion.getFila();
         char nuevaColumna = posicion.getColumna();
+        switch (direccion) {
+            case NORTE, NORESTE, NOROESTE -> nuevaFila += 1;
+            case SUR, SURESTE, SUROESTE -> nuevaFila -= 1;
+            case ENROQUE_CORTO -> nuevaColumna = 'g';
+            case ENROQUE_LARGO -> nuevaColumna = 'b';
+            case OESTE -> {
+                if (nuevaColumna == 'h'){
+                    nuevaColumna = 'g';
+                } else if (nuevaColumna == 'g'){
+                    nuevaColumna = 'f';
+                } else if (nuevaColumna == 'f'){
+                    nuevaColumna = 'e';
+                } else if (nuevaColumna == 'e'){
+                    nuevaColumna = 'd';
+                } else if (nuevaColumna == 'd'){
+                    nuevaColumna = 'c';
+                } else if (nuevaColumna == 'c'){
+                    nuevaColumna = 'b';
+                } else if (nuevaColumna == 'b'){
+                    nuevaColumna = 'a';
+                } else {
+                    nuevaColumna = 'z';
+                }
+            }
+            case ESTE -> {
+                if (nuevaColumna == 'a'){
+                    nuevaColumna = 'b';
+                } else if (nuevaColumna == 'b'){
+                    nuevaColumna = 'c';
+                } else if (nuevaColumna == 'c'){
+                    nuevaColumna = 'd';
+                } else if (nuevaColumna == 'd'){
+                    nuevaColumna = 'e';
+                } else if (nuevaColumna == 'e'){
+                    nuevaColumna = 'f';
+                } else if (nuevaColumna == 'f'){
+                    nuevaColumna = 'g';
+                } else if (nuevaColumna == 'g') {
+                    nuevaColumna = 'h';
+                } else{
+                    nuevaColumna = 'z';
+                }
+            }
+        }
         try {
             comprobarEnroque(direccion);
             posicion = new Posicion(nuevaFila, nuevaColumna);
         } catch (IllegalArgumentException e) {
-            throw new OperationNotSupportedException("Movimiento no válido: " + e.getMessage());
+            throw new OperationNotSupportedException(e.getMessage());
         }
         setPosicion(posicion);
-        setTotalMovimientos(totalMovimientos++);
+        setTotalMovimientos(totalMovimientos+1);
     }
 
     private void comprobarEnroque(Direccion direccion){
