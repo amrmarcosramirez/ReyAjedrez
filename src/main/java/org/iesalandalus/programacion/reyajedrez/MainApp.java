@@ -47,24 +47,24 @@ public class MainApp {
         mostrarRey();
     }
 
-    private static void mover(){
-        mostrarRey();
-        mostrarMenuDirecciones();
-        Direccion direccion = elegirDireccion();
+    private static void mover() {
+
         try
         {
+            Objects.requireNonNull(rey, "El rey aún no se ha creado.");
+            mostrarMenuDirecciones();
+            Direccion direccion = elegirDireccion();
             rey.mover(direccion);
+            mostrarRey();
         }
-        catch(OperationNotSupportedException | NullPointerException | IllegalArgumentException e)
+        catch(OperationNotSupportedException | IllegalArgumentException | NullPointerException e)
         {
             System.out.println(e.getMessage());
         }
     }
 
-    private static void mostrarRey(){
-        //Rey rey = new Rey();
-        Objects.requireNonNull(rey, "El rey aún no se ha creado.");
-        System.out.println(rey);
+    private static void mostrarRey() {
+        System.out.println(rey.toString());
     }
 
 }
