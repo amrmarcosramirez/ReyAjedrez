@@ -61,48 +61,14 @@ public class Rey {
         int nuevaFila = posicion.getFila();
         char nuevaColumna = posicion.getColumna();
         switch (direccion) {
-            case NORTE, NORESTE, NOROESTE -> nuevaFila += 1;
-            case SUR, SURESTE, SUROESTE -> nuevaFila -= 1;
+            case NORTE -> nuevaFila += 1;
+            case SUR -> nuevaFila -= 1;
+            case ESTE -> nuevaColumna += 1;
+            case OESTE -> nuevaColumna -= 1;
+            case NORESTE, NOROESTE -> {nuevaFila += 1; nuevaColumna += 1;}
+            case SURESTE, SUROESTE -> {nuevaFila -= 1; nuevaColumna -= 1;}
             case ENROQUE_CORTO -> nuevaColumna = 'g';
             case ENROQUE_LARGO -> nuevaColumna = 'b';
-            case OESTE -> {
-                if (nuevaColumna == 'h'){
-                    nuevaColumna = 'g';
-                } else if (nuevaColumna == 'g'){
-                    nuevaColumna = 'f';
-                } else if (nuevaColumna == 'f'){
-                    nuevaColumna = 'e';
-                } else if (nuevaColumna == 'e'){
-                    nuevaColumna = 'd';
-                } else if (nuevaColumna == 'd'){
-                    nuevaColumna = 'c';
-                } else if (nuevaColumna == 'c'){
-                    nuevaColumna = 'b';
-                } else if (nuevaColumna == 'b'){
-                    nuevaColumna = 'a';
-                } else {
-                    nuevaColumna = 'z';
-                }
-            }
-            case ESTE -> {
-                if (nuevaColumna == 'a'){
-                    nuevaColumna = 'b';
-                } else if (nuevaColumna == 'b'){
-                    nuevaColumna = 'c';
-                } else if (nuevaColumna == 'c'){
-                    nuevaColumna = 'd';
-                } else if (nuevaColumna == 'd'){
-                    nuevaColumna = 'e';
-                } else if (nuevaColumna == 'e'){
-                    nuevaColumna = 'f';
-                } else if (nuevaColumna == 'f'){
-                    nuevaColumna = 'g';
-                } else if (nuevaColumna == 'g') {
-                    nuevaColumna = 'h';
-                } else{
-                    nuevaColumna = 'z';
-                }
-            }
         }
         try {
             comprobarEnroque(direccion);
