@@ -65,8 +65,10 @@ public class Rey {
             case SUR -> nuevaFila -= 1;
             case ESTE -> nuevaColumna += 1;
             case OESTE -> nuevaColumna -= 1;
-            case NORESTE, NOROESTE -> {nuevaFila += 1; nuevaColumna += 1;}
-            case SURESTE, SUROESTE -> {nuevaFila -= 1; nuevaColumna -= 1;}
+            case NORESTE -> {nuevaFila += 1; nuevaColumna += 1;}
+            case NOROESTE -> {nuevaFila += 1; nuevaColumna -= 1;}
+            case SURESTE -> {nuevaFila -= 1; nuevaColumna += 1;}
+            case SUROESTE -> {nuevaFila -= 1; nuevaColumna -= 1;}
             case ENROQUE_CORTO -> nuevaColumna = 'g';
             case ENROQUE_LARGO -> nuevaColumna = 'b';
         }
