@@ -70,7 +70,7 @@ public class Rey {
             case SURESTE -> {nuevaFila -= 1; nuevaColumna += 1;}
             case SUROESTE -> {nuevaFila -= 1; nuevaColumna -= 1;}
             case ENROQUE_CORTO -> nuevaColumna = 'g';
-            case ENROQUE_LARGO -> nuevaColumna = 'b';
+            case ENROQUE_LARGO -> nuevaColumna = 'c';
         }
         try {
             comprobarEnroque(direccion);
