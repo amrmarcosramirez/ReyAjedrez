@@ -1,0 +1,22 @@
+Poyecto Rey
+-----------
+URL al repositorio GitHub : 
+https://github.com/amrmarcosramirez/ReyAjedrez
+
+Indicaciones:
+-------------
+- Para hacer un uso correcto de la aplicación se deben seguir los pasos de la misma. 
+  Esta se inicia mostrando 4 opciones que el usuario debe elegir. Estas opciones son las siguientes:
+	1. Crear rey por defecto
+	2. Crear rey eligiendo el color
+	3. Mover
+	4. Salir
+- Aclarar que de las opciones anteriores se puede elegir cualquiera. Pero, en caso de la opción 3.Mover,
+  si el Rey no existe, pedirá por pantalla que se cree el Rey, por lo que, se recomienda al principio crear
+  el Rey con alguna de las opciones 1 o 2.
+- Otro punto a señalar es, que si estás moviendo el Rey y ejecutan alguna de las opciones 1 o 2, el Rey se 
+  vuelve a crear y se borra el Rey anterior.
+- Por último, en cuanto al movimiento del Rey, aclarar que las opciones de movimiento son las mismas tanto 
+  para el Rey negro como para el Blanco, por ejmplo: el norte, será el mismo para ambos norte.
+- Sobre el funcionamiento de los test, aclarar que los test dan problema con el Enumerado Direccion. No obstante
+  la aplicación se ha probado en otro proyecto, sin incluir los test, y funciona perfectamente.
